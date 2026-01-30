@@ -3,7 +3,8 @@ package org.JAVA;
 //https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/
 public class EvenDigits {
     public static void main(String[] args) {
-        int[] nums={12,345,2,6,7896};
+//        int[] nums={12,345,2,6,7896};
+        int[] nums={252};
         System.out.println(findNumbers(nums));
     }
     static int findNumbers(int[] nums){
@@ -19,7 +20,7 @@ public class EvenDigits {
     }
         //function to check whether a number contains even no of digit or not
     static boolean even(int num){
-        int numberOfDigit=digits(num);
+        int numberOfDigit=digits2(num);
 
         /*
                 if(numberOfDigit % 2==0){
@@ -65,7 +66,7 @@ public class EvenDigits {
             return 1;
         }
 
-        return (int)(Math.log(num)) + 1;
+        return (int)(Math.log10(num)) + 1; //this converts 256 to 2.2 which in int is 2 + 1 which is 3 digits in 256 which is true
     }
 
 }
