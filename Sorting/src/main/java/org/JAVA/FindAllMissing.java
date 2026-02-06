@@ -1,0 +1,45 @@
+package org.JAVA;
+
+//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/submissions/1909246423/
+//google question
+
+import java.util.ArrayList;
+import java.util.List;
+
+class FindAllMissing {
+    public static void main(String[] args) {
+
+    }
+
+    public List<Integer> findDisappearedNumbers(int[] arr) {
+        int i=0;
+        while(i<arr.length){
+            int correct=arr[i]-1;
+            if(arr[i]!=arr[correct]){
+                swap(arr,i,correct);
+            }else{
+                i++;
+            }
+        }
+        //just find missing number
+        List<Integer> ans=new ArrayList<>();
+        for (int j = 0; j < arr.length; j++) {
+            if(arr[j]!=j+1){
+                ans.add(j+1);
+            }
+            
+        }
+        return ans;
+    }
+
+
+
+
+
+    void swap(int[] arr,int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+
+}
