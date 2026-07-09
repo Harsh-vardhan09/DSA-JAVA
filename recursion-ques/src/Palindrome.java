@@ -12,7 +12,7 @@ public class Palindrome {
 
 
     static boolean palin(int n){
-       return if(n==sum);
+        return (n==sum);
     }
 
     public static void main(String[] args) {
